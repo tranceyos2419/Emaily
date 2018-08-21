@@ -1,0 +1,20 @@
+{
+  "name": "MyFullstackReactCode",
+  "version": "1.0.0",
+  "description": "engines, start in scripts",
+  "main": "index.js",
+  "engines": {
+    "node": "8.9.0",
+    "npm": "6.4.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
