@@ -1,3 +1,4 @@
+//the size of each document on mongoDB is 4mb
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 

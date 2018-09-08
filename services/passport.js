@@ -27,6 +27,8 @@ passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback',
+    // inherently googleStrategy donen't trust any request coming through proxy
+    // but Heroku applies proxy to a request
     proxy: true
 },
     async (accessToken, refreshToken, profile, done) => {

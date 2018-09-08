@@ -7,6 +7,7 @@ const passport = require('passport');
 
 // not returning anything, I want to just execute this
 require('./models/User');
+require('./models/Survey');
 // passport requires loading User.js first
 require('./services/passport');
 
@@ -20,6 +21,7 @@ mongoose.connect(keys.mongoURI, {
 //! app.use middlewares work to every single requests
 // I can apply a middleware to every single requests by writing
 // app.use(require('route/to/middleware'))
+// req.body is available because of bodyParser
 app.use(bodyParser.json());
 // app.use is a middleware
 app.use(
@@ -40,6 +42,7 @@ app.use(passport.session())
 // authRoutes(app);
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoute')(app);
 
 if (process.env.NODE_ENV === 'production') {
     // Express will serve up production assets
